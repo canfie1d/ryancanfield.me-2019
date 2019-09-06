@@ -4,8 +4,17 @@
 // REM BASE (font-size on html element)
 $rem-base: 16;
 
-@function rem($pxValue) {
-  @return $pxValue/$rem-base + rem;
+// @function rem($pxValues) {
+//   @return $pxValue/$rem-base + rem;
+// }
+
+@function rem($pxValues...) {
+  $result: 1rem;
+
+  @each $pxValue in $pxValues {
+    $result: $pxValue/$rem-base + rem;
+  }
+  @return $result;
 }
 
 ////////////////////////

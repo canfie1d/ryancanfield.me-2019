@@ -6,7 +6,7 @@
     width: 100%;
 
     @include min-screen($media-small) {
-      width: calc(100% - rem(80));
+      width: calc(100% - #{rem(80)});
     }
   }
 
@@ -27,16 +27,16 @@
 
 .content {
   position: relative;
-  padding: rem(60 20 80);
+  padding: rem(60, 20, 80);
   min-height: 100vh;
   background: $white;
 
   @include min-screen($media-small) {
-    padding: rem(60 40 120);
+    padding: rem(60, 40, 120);
   }
 
   @include min-screen($media-medium) {
-    padding: rem(60 60 120);
+    padding: rem(60, 60, 120);
   }
 }
 
@@ -50,7 +50,7 @@
   }
 
   @include min-screen($media-large) {
-    .content__split__column {
+  .content__split__column {
       flex: 1 1 50%;
 
       &:nth-of-type(odd) {

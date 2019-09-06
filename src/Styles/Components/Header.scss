@@ -9,7 +9,7 @@ header {
 
   @include min-screen($media-small) {
     border-top: none;
-    padding: rem(20 10);
+    padding: rem(20, 10);
     width: $headerHeight;
     height: 100vh;
   }
