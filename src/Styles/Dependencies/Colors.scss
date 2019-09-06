@@ -19,15 +19,15 @@ $gray--900: #1A1A1A;
 
 // Thematic colors
 $primary: #202C39;
-$secondary: #D72638;
+$secondary: #D9272F;
 $tertiary: #bbc9c9;
-$off-white: #f5f9fA;
-$secondary-dark: #283845;
+$off-white: #fbfbfb;
+$primary-dark: shade($primary, 50%);
 
 // Status colors
 $status--success: #25d785;
 $status--warning: #f27225;
-$status--error: #ea4626;
+$status--error: #D72638;
 
 // Typography
 $display-color: $primary;
