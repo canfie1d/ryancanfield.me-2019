@@ -1,18 +1,18 @@
 import React from 'react';
 import Card from '../Components/Card';
 
-export default class CardList extends React.Component {
-  renderCards() {
+const CardList = props => {
+  const renderCards = () => {
     const cardList = [];
 
-    for (let i = 0; i < this.props.cards.length; i++) {
+    for (let i = 0; i < props.cards.length; i++) {
       cardList.push(
         <Card
           key={i}
-          element={this.props.element}
+          element={props.element}
           inList
         >
-          {this.props.cards[i]}
+          {props.cards[i]}
         </Card>
       )
     }
@@ -20,11 +20,11 @@ export default class CardList extends React.Component {
     return cardList;
   }
 
-  render() {
-    return (
-      <ul className='card__list'>
-        {this.renderCards()}
-      </ul>
-    );
-  }
+  return (
+    <ul className='card__list'>
+      {renderCards()}
+    </ul>
+  );
 }
+
+export default CardList;

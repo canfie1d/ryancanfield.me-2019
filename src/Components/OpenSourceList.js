@@ -1,8 +1,8 @@
 import React from 'react';
 import Icon from '../Components/Icon';
 
-export default class OpenSourceList extends React.Component {
-  renderNpmLink(item) {
+const OpenSourceList = props => {
+  const renderNpmLink = (item) => {
     if (item.npmUrl) {
       return (
         <a className='a' href={item.npmUrl}>
@@ -13,33 +13,26 @@ export default class OpenSourceList extends React.Component {
     }
   }
 
-  renderItems() {
-    const items = this.props.items;
-    const itemList = [];
-
-    for (let i = 0; i < items.length; i++) {
-      itemList.push(
-        <li key={i} className='open-source__item'>
-          <div className='open-source__header'>
-            <h4 className='h4'>{items[i].title}</h4>
-          </div>
-          <a className='a' href={items[i].githubUrl}>
-            <Icon color='primary' icon='github' size='x-large' />
-            <span className='visually-hidden'>{`View ${items[i].title} on Github`}</span>
-          </a>
-          {this.renderNpmLink(items[i])}
-        </li>
-      );
-    }
-
-    return itemList;
+  const renderItems = () => {
+    return props.items.map((item, i) => (
+      <li key={i} className='open-source__item'>
+        <div className='open-source__header'>
+          <h4 className='h4'>{item.title}</h4>
+        </div>
+        <a className='a' href={item.githubUrl}>
+          <Icon color='primary' icon='github' size='x-large' />
+          <span className='visually-hidden'>{`View ${item.title} on Github`}</span>
+        </a>
+        {renderNpmLink(item)}
+      </li>
+    ))
   }
 
-  render() {
-    return (
-      <ul className='open-source__list'>
-        {this.renderItems()}
-      </ul>
-    );
-  }
+  return (
+    <ul className='open-source__list'>
+      {renderItems()}
+    </ul>
+  );
 }
+
+export default OpenSourceList;

@@ -1,12 +1,12 @@
 import React from 'react';
 
-export default class Introduction extends React.Component {
-  render() {
-    return (
-      <div className='introduction'>
-        <h1 className='h1'>{this.props.title}</h1>
-        <h2 className='h2'>{this.props.subtitle}</h2>
-      </div>
-    );
-  }
+const Introduction = props => {
+  return (
+    <div className='introduction'>
+      <h1 className='h1'>{props.title}</h1>
+      <h2 className='h2'>{props.subtitle}</h2>
+    </div>
+  );
 }
+
+export default Introduction;

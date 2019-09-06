@@ -1,27 +1,27 @@
 import React from 'react';
 import AnimatedWaypoint from '../Containers/AnimatedWaypoint';
 
-export default class Card extends React.Component {
-  render() {
-    const classes = [
-      'card__item',
-      this.props.className ? this.props.className : null
-    ].join(' ').trim();
+const Card = props => {
+  const classes = [
+    'card__item',
+    props.className ? props.className : null
+  ].join(' ').trim();
 
-    if (this.props.inList) {
-      return (
-        <AnimatedWaypoint element={this.props.element || 'li'} className={classes}>
-          {this.props.children}
-        </AnimatedWaypoint>
-      );
-    }
-
+  if (props.inList) {
     return (
-      <AnimatedWaypoint element={this.props.element || 'div'}>
-        <div className={classes}>
-          {this.props.children}
-        </div>
+      <AnimatedWaypoint element={props.element || 'li'} className={classes}>
+        {props.children}
       </AnimatedWaypoint>
     );
   }
+
+  return (
+    <AnimatedWaypoint element={props.element || 'div'}>
+      <div className={classes}>
+        {props.children}
+      </div>
+    </AnimatedWaypoint>
+  );
 }
+
+export default Card;

@@ -1,62 +1,52 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-export default class Icon extends React.PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isMounted: false,
-      icon: ''
-    }
-  }
+const Icon = props => {
+  const [ isMounted, setIsMounted ] = useState(false);
+  const [ icon, setIcon ] = useState('');
 
-  componentDidMount() {
+  useEffect(() => {
     // This article details webpack magic comments used in dynamic import
     // https://medium.com/front-end-hacking/webpack-and-dynamic-imports-doing-it-right-72549ff49234
 
     // isMounted is an antipattern but solves the problem for this case
     // https://reactjs.org/blog/2015/12/16/ismounted-antipattern.html
-    this.setState({isMounted: true});
-    const iconPath = `./Icons/${this.props.icon}`;
+    setIsMounted(true);
+    const iconPath = `./Icons/${props.icon}`;
     import(/* webpackMode: "eager" */ `${iconPath}`)
       .then(module => {
         return module.default();
       })
       .then(IconComponent => {
-        if (this.state.isMounted) {
-          this.setState({
-            icon: IconComponent
-          });
+        if (isMounted) {
+          setIcon(IconComponent);
         }
       })
       .catch(() => {
-        console.warn(`ICON NOT FOUND - ${this.props.icon}`)
+        console.warn(`ICON NOT FOUND - ${props.icon}`)
       })
-  }
 
-  componentWillUnmount() {
-    this.setState({isMounted: false});
-  }
+    return function cleanup() {
+      setIsMounted(false);
+    };
+  }, [isMounted, props.icon])
 
-  render() {
-    const classes = [
-      'icon',
-      this.props.size && `icon--${this.props.size}`,
-      this.props.color && `icon--${this.props.color}`,
-      this.props.rotate && `icon--rotate-${this.props.rotate}`,
-      this.props.displayInline && 'icon--inline',
-      this.props.dropShadow && 'drop-shadow',
-      this.props.className,
-    ];
+  const classes = [
+    'icon',
+    props.size && `icon--${props.size}`,
+    props.color && `icon--${props.color}`,
+    props.rotate && `icon--rotate-${props.rotate}`,
+    props.displayInline && 'icon--inline',
+    props.dropShadow && 'drop-shadow',
+    props.className,
+  ];
 
-    return (
-      <span className={classNames(classes)} style={this.props.style}>
-        {this.state.icon}
-      </span>
-    );
-  }
-
+  return (
+    <span className={classNames(classes)} style={props.style}>
+      {icon}
+    </span>
+  );
 };
 
 Icon.propTypes = {
@@ -95,3 +85,5 @@ Icon.defaultProps = {
   color: null,
   class: null
 }
+
+export default Icon;

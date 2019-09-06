@@ -20,7 +20,7 @@
     }
 
     @include min-screen($media-small) {
-      padding: rem(10 30);
+      padding: rem(10, 30);
     }
   }
 
@@ -32,7 +32,7 @@
     text-decoration: none;
 
     @include min-screen($media-small) {
-      padding: rem(10 30);
+      padding: rem(10, 30);
     }
   }
 }

@@ -1,67 +1,55 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import classNames from 'classnames';
 import { Waypoint } from 'react-waypoint';
 
-export default class AnimatedWaypoint extends React.Component {
-  constructor(props) {
-    super(props);
+const AnimatedWaypoint = props => {
+  const [inView, setInView] = useState(false);
+  const [waypoint, setWaypoint] = useState('');
 
-    this.state = {
-      inView: false
-    };
-  }
-
-  componentWillUnmount() {
-    this.setState({
-      inView: false
-    });
-  }
-
-  handleWaypointEnter(currentPosition) {
-    this.setState({
-      inView: false
-    });
-
-    if (currentPosition === 'inside') {
-      this.setState({
-        inView: true
-      });
+  useEffect(() => {
+    if (waypoint && waypoint.currentPosition === 'inside') {
+      setInView(true)
+    } else {
+      setInView(false)
+      setWaypoint('')
     }
+  }, [waypoint]);
+
+  const handleWaypointEnter = waypoint => {
+    setWaypoint(waypoint);
   }
 
-  renderElement() {
+  const renderElement = () => {
     const classes = [
       'waypoint',
-      this.state.inView ? 'waypoint--inView' : null,
-      this.props.className ? this.props.className : null
-    ].join(' ').trim();
+      inView && 'waypoint--inView',
+      props.className && props.className
+    ];
 
-    if (this.props.element) {
+    if (props.element) {
       return (
-        <this.props.element className={classes}>
-          {this.props.children}
-        </this.props.element>
+        <props.element className={classNames(classes)}>
+          {props.children}
+        </props.element>
       );
     }
 
     return (
-      <div className={classes}>
-        {this.props.children}
+      <div className={classNames(classes)}>
+        {props.children}
       </div>
     );
   }
 
-  render() {
-    return (
-      <Waypoint
-        scrollableAncestor={window}
-        onEnter={
-          ({ currentPosition }) => {
-            this.handleWaypointEnter.bind(this, currentPosition)()
-          }
-        }
-      >
-        {this.renderElement()}
-      </Waypoint>
-    );
-  }
+  return (
+    <Waypoint
+      scrollableAncestor={window}
+      onEnter={waypoint => handleWaypointEnter(waypoint)}
+      bottomOffset={100}
+    >
+      {renderElement()}
+    </Waypoint>
+  );
 };
+
+export default AnimatedWaypoint;

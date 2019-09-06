@@ -38,7 +38,7 @@
         background: $secondary;
         text-decoration: none;
         box-shadow: 2px 2px 4px rgba($black, .2);
-        padding: rem(20 20);
+        padding: rem(20);
         text-transform: uppercase;
         color: $white;
         transition: box-shadow 200ms ease-out,
@@ -51,7 +51,7 @@
         }
 
         @include min-screen($media-small) {
-          padding: rem(20 40);
+          padding: rem(20, 40);
         }
       }
 
