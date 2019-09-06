@@ -55,7 +55,7 @@
 
 .a {
   color: $secondary;
-  text-decoration-skip: ink;
+  text-decoration-skip-ink: auto;
   white-space: nowrap;
   cursor: pointer;
   cursor: url(./Assets/Images/pointer.png) 2 2, pointer;

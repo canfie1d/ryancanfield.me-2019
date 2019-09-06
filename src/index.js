@@ -3,8 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import createStore from './Services/Store';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router } from 'react-router-dom';
-import publicRoutes from './routes';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
@@ -23,7 +22,7 @@ if (process.env.NODE_ENV === 'development') {
 ReactDOM.render(
   <Provider store={store}>
     <Router>
-      <App>{publicRoutes}</App>
+      <Route path='/' component={App} />
     </Router>
   </Provider>,
   document.getElementById('root')
