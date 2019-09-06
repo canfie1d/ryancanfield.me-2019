@@ -58,7 +58,7 @@ export const DEMOS = [
     title: 'Expanding Hamburger Button',
     id: 'pvewaX',
     image: 'https://s3-us-west-2.amazonaws.com/ryancanfield.me-images/codepens/expanding_hamburger.png',
-    hearts: '94'
+    hearts: '98'
   },
   {
     title: 'Genie Style Hidden Navigation',
@@ -70,13 +70,13 @@ export const DEMOS = [
     title: 'Flipping 3d Form Switcher',
     id: 'ogYrZG',
     image: 'https://s3-us-west-2.amazonaws.com/ryancanfield.me-images/codepens/3d_form.png',
-    hearts: '47'
+    hearts: '49'
   },
   {
     title: 'Bottom Card Navigation',
     id: 'EagxGR',
     image: 'https://s3-us-west-2.amazonaws.com/ryancanfield.me-images/codepens/bottom_nav.png',
-    hearts: '37'
+    hearts: '39'
   },
   {
     title: 'Single Element Reusable Tooltip',
@@ -88,19 +88,19 @@ export const DEMOS = [
     title: 'Dropdown Mini Menu',
     id: 'vymmZR',
     image: 'https://s3-us-west-2.amazonaws.com/ryancanfield.me-images/codepens/mini_menu.png',
-    hearts: '1'
+    hearts: '5'
   },
   {
     title: 'Blur Modal',
     id: 'zwWOwj',
     image: 'https://s3-us-west-2.amazonaws.com/ryancanfield.me-images/codepens/blur_modal.png',
-    hearts: '0'
+    hearts: '2'
   },
   {
     title: 'Chat Bubbles',
     id: 'GmMaVx',
     image: 'https://s3-us-west-2.amazonaws.com/ryancanfield.me-images/codepens/chat_bubbles.png',
-    hearts: '0'
+    hearts: '1'
   }
 ];
 

@@ -37,8 +37,8 @@ const About = props => {
               <h3 className='h3'>Work &amp; Education</h3>
               <p className='p'>In 2009, I earned an Associates in Information Technology as a member of the National Honor Society. In May 2012, I earned a Bachelor of Fine Art in Graphic Design with Honors/Cum Laude &amp; as the Salutatorian.</p>
               <p className='p'>Shortly thereafter, I began my career as a designer for the <a className='a' href='http://www.azstatefair.com'>Arizona State Fair</a> in Phoenix, AZ before focusing my career on web design and development. By October 2012, I was offered a position as a UI engineer at <a href='http://www.synapsestudios.com' className='a'>Synapse Studios</a>. A position I held until my move to Seattle, WA in 2016.</p>
-              <p className='p'>Following the move to Seattle, I began a new position at <a className='a' href='http://helpfulhuman.com'>Helpful Human</a> where I specialized in user interface design &amp; front-end development.</p>
-              <p className='p'>Currently, I am a software engineer at <a className='a' href='https://xinova.com'>Xinova</a>.</p>
+              <p className='p'>Following the move to Seattle, I began a new position at <a className='a' href='http://helpfulhuman.com'>Helpful Human</a> where I specialized in user interface design &amp; front-end development. During my time with Helpful Human, I cut my teeth on large-scale, distributed application architecture while also working within a large and evolving design system.</p>
+              <p className='p'>Most recently, I was a software engineer at <a className='a' href='https://xinova.com'>Xinova</a> where I architected and rebuilt the frontend of their innovation network platform- reducing 250,000 lines of legacy frontend code to only 40,000 lines of React in just 6 months.</p>
             </div>
           </AnimatedWaypoint>
         </div>
