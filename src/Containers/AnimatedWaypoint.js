@@ -1,28 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames';
 import { Waypoint } from 'react-waypoint';
 
 const AnimatedWaypoint = props => {
-  const [inView, setInView] = useState(false);
-  const [waypoint, setWaypoint] = useState('');
-
-  useEffect(() => {
-    if (waypoint && waypoint.currentPosition === 'inside') {
-      setInView(true)
-    } else {
-      setInView(false)
-      setWaypoint('')
-    }
-  }, [waypoint]);
-
-  const handleWaypointEnter = waypoint => {
-    setWaypoint(waypoint);
-  }
+  const [waypoint, setWaypoint] = useState({});
 
   const renderElement = () => {
-    const classes = [
+      const classes = [
       'waypoint',
-      inView && 'waypoint--inView',
+      waypoint.currentPosition === 'inside' && 'waypoint--inView',
       props.className && props.className
     ];
 
@@ -44,7 +30,7 @@ const AnimatedWaypoint = props => {
   return (
     <Waypoint
       scrollableAncestor={window}
-      onEnter={waypoint => handleWaypointEnter(waypoint)}
+      onEnter={waypoint => setWaypoint(waypoint)}
       bottomOffset={100}
     >
       {renderElement()}
