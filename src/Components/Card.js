@@ -1,15 +1,16 @@
 import React from 'react';
+import classNames from 'classnames';
 import AnimatedWaypoint from '../Containers/AnimatedWaypoint';
 
 const Card = props => {
   const classes = [
     'card__item',
-    props.className ? props.className : null
-  ].join(' ').trim();
+    props.className && props.className
+  ];
 
   if (props.inList) {
     return (
-      <AnimatedWaypoint element={props.element || 'li'} className={classes}>
+      <AnimatedWaypoint element={props.element || 'li'} className={classNames(classes)}>
         {props.children}
       </AnimatedWaypoint>
     );
@@ -17,7 +18,7 @@ const Card = props => {
 
   return (
     <AnimatedWaypoint element={props.element || 'div'}>
-      <div className={classes}>
+      <div className={classNames(classes)}>
         {props.children}
       </div>
     </AnimatedWaypoint>

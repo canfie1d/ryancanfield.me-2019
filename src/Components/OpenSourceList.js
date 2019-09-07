@@ -2,7 +2,7 @@ import React from 'react';
 import Icon from '../Components/Icon';
 
 const OpenSourceList = props => {
-  const renderNpmLink = (item) => {
+  const renderNpmLink = item => {
     if (item.npmUrl) {
       return (
         <a className='a' href={item.npmUrl}>

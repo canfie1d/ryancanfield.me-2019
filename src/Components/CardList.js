@@ -3,21 +3,15 @@ import Card from '../Components/Card';
 
 const CardList = props => {
   const renderCards = () => {
-    const cardList = [];
-
-    for (let i = 0; i < props.cards.length; i++) {
-      cardList.push(
-        <Card
-          key={i}
-          element={props.element}
-          inList
-        >
-          {props.cards[i]}
-        </Card>
-      )
-    }
-
-    return cardList;
+    return props.cards.map((card, i) => (
+      <Card
+        key={i}
+        element={props.element}
+        inList
+      >
+        {card}
+      </Card>
+    ));
   }
 
   return (
