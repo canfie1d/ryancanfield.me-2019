@@ -39,7 +39,7 @@ const Contact = props => {
         <Card>
           <div className='contact-card'>
             <h3 className='h3'>Would you like to work together?</h3>
-            <h3 className='h3'>I am not actively seeking projects but would be happy to chat and/or get a cup of coffee.</h3>
+            <h3 className='h3'>I am actively seeking my next opportunity and would be happy to chat and/or get a cup of coffee.</h3>
             <ul className='contact-card__list'>
               {renderContactPoints()}
             </ul>
