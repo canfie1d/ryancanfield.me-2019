@@ -1,5 +1,9 @@
 export const CLIENTS = [
   {
+    title: 'Xinova',
+    url: 'http://xinova.com'
+  },
+  {
     title: 'Carnival Cruiselines',
     url: 'http://ocean.com'
   },
