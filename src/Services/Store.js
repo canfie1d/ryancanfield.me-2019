@@ -2,7 +2,7 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { responsiveStoreEnhancer } from 'redux-responsive';
-import reducers from '../Reducers';
+import reducers from '../reducers';
 
 let middleware = [thunk];
 

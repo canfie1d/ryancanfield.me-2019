@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import style from '../styles/components/icon.module.scss';
 
 const Icon = props => {
   const [ isMounted, setIsMounted ] = useState(false);
@@ -13,7 +14,7 @@ const Icon = props => {
     // isMounted is an antipattern but solves the problem for this case
     // https://reactjs.org/blog/2015/12/16/ismounted-antipattern.html
     setIsMounted(true);
-    const iconPath = `./Icons/${props.icon}`;
+    const iconPath = `./icons/${props.icon}`;
     import(/* webpackMode: "eager" */ `${iconPath}`)
       .then(module => {
         return module.default();
@@ -33,12 +34,12 @@ const Icon = props => {
   }, [isMounted, props.icon])
 
   const classes = [
-    'icon',
-    props.size && `icon--${props.size}`,
-    props.color && `icon--${props.color}`,
-    props.rotate && `icon--rotate-${props.rotate}`,
-    props.displayInline && 'icon--inline',
-    props.dropShadow && 'drop-shadow',
+    style['icon'],
+    props.size && style[`icon--${props.size}`],
+    props.color && style[`icon--${props.color}`],
+    props.rotate && style[`icon--rotate-${props.rotate}`],
+    props.displayInline && style['icon--inline'],
+    props.dropShadow && style['drop-shadow'],
     props.className,
   ];
 

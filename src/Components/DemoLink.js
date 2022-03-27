@@ -1,20 +1,20 @@
-import React from 'react';
-import Icon from '../Components/Icon';
+import classNames from 'classnames';
+import Image from 'next/image';
+import Icon from '../components/Icon';
+import style from '../styles/components/demo-link.module.scss';
 
 const DemoLink = props => {
   return (
-    <a className='a demo__link' href={`http://www.codepen.io/canfie1d/full/${props.id}`}>
-      <div className='demo__link__column'>
-        <h3 className='h3 demo__title'>{props.title}</h3>
-        <div className='demo__heart-container'>
+    <a className={classNames('a', style['demo__link'])} href={`http://www.codepen.io/canfie1d/full/${props.id}`}>
+      <div className={style['demo__link__column']}>
+        <h3 className={classNames('h3', style['demo__title'])}>{props.title}</h3>
+        <div className={style['demo__heart-container']}>
           <Icon icon='heart' size='small' color='secondary' />
-          <span className='demo__heart__quantity'>{props.hearts}</span>
+          <span className={style['demo__heart__quantity']}>{props.hearts}</span>
         </div>
       </div>
-      <div className='demo__link__column'>
-        <div className='demo__image__wrapper'>
-          <img className='demo__image' src={props.image} alt='' />
-        </div>
+      <div className={style['demo__link__column']}>
+        <Image sizes='50vw' layout='fill' objectFit='cover' src={props.image} alt='' />
       </div>
     </a>
   );

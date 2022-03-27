@@ -1,5 +1,5 @@
-import React from 'react';
-import Card from '../Components/Card';
+import Card from './Card';
+import style from '../styles/components/card.module.scss';
 
 const CardList = props => {
   const renderCards = () => {
@@ -15,7 +15,7 @@ const CardList = props => {
   }
 
   return (
-    <ul className='card__list'>
+    <ul className={style['card__list']}>
       {renderCards()}
     </ul>
   );

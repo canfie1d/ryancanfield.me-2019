@@ -9,10 +9,10 @@ script:
   - npm run build
 deploy:
   provider: s3
-  access_key_id: REACT_APP_SECRET_ACCESS_ID
-  secret_access_key: REACT_APP_SECRET_ACCESS_KEY
+  access_key_id: NEXT_PUBLIC_SECRET_ACCESS_ID
+  secret_access_key: NEXT_PUBLIC_SECRET_ACCESS_KEY
   bucket: ryancanfield.me
   skip_cleanup: true
   local_dir: build
   on:
-    branch: master
+    branch: main

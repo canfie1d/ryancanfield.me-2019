@@ -1,17 +1,18 @@
-import React from 'react';
+import style from '../styles/components/tag-list.module.scss';
+import classNames from 'classnames';
 
 const TagList = props => {
   const renderList = () => {
     return props.tags.map(tag => {
       if (tag.url) {
         return (
-          <li key={tag.title} className='tag__item tag__item--hasLink'>
-            <a href={tag.url} className='a tag__link'>{tag.title}</a>
+          <li key={tag.title} className={classNames(style['tag__item'], style['tag__item--hasLink'])}>
+            <a href={tag.url} className={classNames('a', style['tag__link'])}>{tag.title}</a>
           </li>
         );
       } else {
         return (
-          <li key={tag.title} className='tag__item'>
+          <li key={tag.title} className={style['tag__item']}>
             {tag.title}
           </li>
         );
@@ -20,7 +21,7 @@ const TagList = props => {
   };
 
   return (
-    <ul className='tag__list'>
+    <ul className={style['tag__list']}>
       {renderList()}
     </ul>
   );

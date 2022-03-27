@@ -1,5 +1,6 @@
-import React from 'react';
-import Icon from '../Components/Icon';
+import classNames from 'classnames';
+import Icon from '../components/Icon';
+import style from '../styles/components/open-source.module.scss';
 
 const OpenSourceList = props => {
   const renderNpmLink = item => {
@@ -15,9 +16,9 @@ const OpenSourceList = props => {
 
   const renderItems = () => {
     return props.items.map((item, i) => (
-      <li key={i} className='open-source__item'>
-        <div className='open-source__header'>
-          <h4 className='h4'>{item.title}</h4>
+      <li key={i} className={style['open-source__item']}>
+        <div className={style['open-source__header']}>
+          <h4 className={classNames('h4', style['h4'])}>{item.title}</h4>
         </div>
         <a className='a' href={item.githubUrl}>
           <Icon color='primary' icon='github' size='x-large' />
@@ -29,7 +30,7 @@ const OpenSourceList = props => {
   }
 
   return (
-    <ul className='open-source__list'>
+    <ul className={style['open-source__list']}>
       {renderItems()}
     </ul>
   );

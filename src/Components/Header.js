@@ -1,10 +1,10 @@
-import React from 'react';
 import Navigation from './Navigation';
+import style from '../styles/components/header.module.scss';
 
 const Header = props => {
   return (
-    <header>
-      <h1 className='h1'>Ryan Canfield</h1>
+    <header className={style['header']}>
+      <h1 className={style['h1']}>Ryan Canfield</h1>
       <Navigation />
     </header>
   );

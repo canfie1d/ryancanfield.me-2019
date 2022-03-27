@@ -1,10 +1,10 @@
-import React from 'react';
 import classNames from 'classnames';
-import AnimatedWaypoint from '../Containers/AnimatedWaypoint';
+import AnimatedWaypoint from '../components/AnimatedWaypoint';
+import style from '../styles/components/card.module.scss';
 
 const Card = props => {
   const classes = [
-    'card__item',
+    style['card__item'],
     props.className && props.className
   ];
 

@@ -1,23 +1,24 @@
-import React from 'react';
+import Image from 'next/image';
+import style from '../styles/components/card.module.scss';
 
 const ArticleLink = props => {
   return (
-    <a href={props.url} className='card__link'>
-      <div className='card__row'>
-        <div className='card__column'>
-          <img src={props.imageUrl} className='card__image' alt='presentational card' role="presentation" />
+    <a href={props.url} className={style['card__link']}>
+      <div className={style['card__row']}>
+        <div className={style['card__column']}>
+          <Image layout='fill' src={props.imageUrl} className={style['card__image']} alt='presentational card' role="presentation" />
         </div>
-        <div className='card__column'>
-          <span className='card__title'>
+        <div className={style['card__column']}>
+          <span className={style['card__title']}>
             {props.title}
           </span>
-          <div className='card__description-wrapper'>
-            <p className='card__description'>
+          <div className={style['card__description-wrapper']}>
+            <p className={style['card__description']}>
               {props.description}
             </p>
           </div>
-          <span className='card__length'>
-            {props.length}
+          <span className={style['card__length']}>
+            {props.lengthœ}
           </span>
         </div>
       </div>
