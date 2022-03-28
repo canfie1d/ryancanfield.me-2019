@@ -1,12 +1,13 @@
-import Head from 'next/head';
 import classNames from 'classnames';
+import { CONTACT_POINTS } from '../services/Data';
 import Introduction from '../components/Introduction';
 import Footer from '../components/Footer';
 import Card from '../components/Card';
 import Icon from '../components/Icon';
-import { CONTACT_POINTS } from '../services/Data';
+import SEO from '../components/Seo';
 import lStyle from '../styles/components/layout.module.scss';
 import style from '../styles/components/contact-card.module.scss';
+import Recommendations from '../components/Recommendations';
 
 const Contact = props => {
 
@@ -24,7 +25,7 @@ const Contact = props => {
         return (
           <li key={i} className={style['contact-card__item']}>
             <a className='a' href={contact.url}>
-              <Icon color='primary' size='x-large' icon={contact.icon} />
+              <Icon color='primary' size='x-large' name={contact.icon} />
               <span className='visually-hidden'>{contact.title}</span>
             </a>
           </li>
@@ -34,11 +35,8 @@ const Contact = props => {
   }
 
   return (
-    <>
-    <Head>
-      <title>Contact - Ryan Canfield</title>
-    </Head>
-    <main className={classNames(lStyle['page'], 'fade')}>
+    <main className='fade'>
+      <SEO title='Contact' siteTitle='Ryan Canfield' description="I'd love to hear from you." />
       <Introduction title="Contact Me." subtitle="You can reach to out me in several ways." />
       <div className={lStyle['content']} id='content'>
         <div className='hr' />
@@ -46,16 +44,16 @@ const Contact = props => {
         <Card>
           <div className={style['contact-card']}>
             <h3 className={classNames('h3', style['h3'])}>Would you like to work together?</h3>
-            <h3 className={classNames('h3', style['h3'])}>I am actively seeking my next opportunity and would be happy to chat and/or get a cup of coffee.</h3>
+            <h3 className={classNames('h3', style['h3'])}>I'm not seeking a new opportunity but I always<br /> like hearing from new (and familiar) people!</h3>
             <ul className={style['contact-card__list']}>
               {renderContactPoints()}
             </ul>
           </div>
         </Card>
       </div>
+      <Recommendations />
       <Footer />
     </main>
-    </>
   );
 }
 

@@ -9,7 +9,7 @@ const DemoLink = props => {
       <div className={style['demo__link__column']}>
         <h3 className={classNames('h3', style['demo__title'])}>{props.title}</h3>
         <div className={style['demo__heart-container']}>
-          <Icon icon='heart' size='small' color='secondary' />
+          <Icon name='heart' size='small' color='secondary' />
           <span className={style['demo__heart__quantity']}>{props.hearts}</span>
         </div>
       </div>

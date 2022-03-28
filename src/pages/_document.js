@@ -6,14 +6,9 @@ const Document = () => {
       <Head>
         <meta charSet="utf-8"/>
         <meta name="msapplication-config" content="none"/>
-        <meta name="description" content="This website serves as the portfolio of UI engineer, Ryan Canfield."/>
-        <meta property="og:title" content="Ryan Canfield- Design &amp; Development"/>
-        <meta property="og:site_name" content="ryancanfield.me"/>
-        <meta property="og:url" content="http://ryancanfield.me"/>
-        <meta property="og:type" content="website"/>
-        <meta property="og:description" content="This website serves as the portfolio of UI engineer, Ryan Canfield."/>
-        <meta property="og:image" content="%PUBLIC_URL%/media/og-image.png"/>
-        <meta name="theme-color" content="#2f3634"/>
+        <meta name="theme-color" content="#2f3634" />
+        <link rel="shortcut icon" href="/favicon.png"/>
+        <link rel="manifest" href="/manifest.json"/>
       </Head>
       <body>
         <Main />

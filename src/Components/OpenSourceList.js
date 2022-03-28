@@ -7,7 +7,7 @@ const OpenSourceList = props => {
     if (item.npmUrl) {
       return (
         <a className='a' href={item.npmUrl}>
-          <Icon color='primary' icon='npm' size='x-large' />
+          <Icon color='primary' name='npm' size='x-large' />
           <span className='visually-hidden'>{`View ${item.title} on NPM`}</span>
         </a>
       );
@@ -21,7 +21,7 @@ const OpenSourceList = props => {
           <h4 className={classNames('h4', style['h4'])}>{item.title}</h4>
         </div>
         <a className='a' href={item.githubUrl}>
-          <Icon color='primary' icon='github' size='x-large' />
+          <Icon color='primary' name='github' size='x-large' />
           <span className='visually-hidden'>{`View ${item.title} on Github`}</span>
         </a>
         {renderNpmLink(item)}

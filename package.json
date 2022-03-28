@@ -4,7 +4,7 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "dev": "next dev",
+    "dev": "netlify dev",
     "build": "next build",
     "start": "next start"
   },
@@ -28,15 +28,13 @@
     "next": "12.1.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-redux": "^7.2.6",
     "react-transition-group": "^4.4.2",
+    "react-useportal": "^1.0.13",
     "react-waypoint": "^10.1.0",
-    "redux-devtools-extension": "^2.13.9",
-    "redux-thunk": "^2.4.1",
+    "sharp": "^0.30.3",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "redux-responsive": "^4.3.8",
     "sass": "^1.49.9"
   }
 }

@@ -25,6 +25,8 @@
   --tertiary: #bbc9c9;
   --off-white: #fbfbfb;
   --primary-dark: #{functions.shade(#202C39, 50%)};
+  --orange: #f4a026;
+  --blue: #61acd2;
 
   // Status colors
   --status--success: #25d785;
@@ -72,28 +74,6 @@ body {
   &:before,
   &:after {
     box-sizing: inherit;
-  }
-}
-
-.visually-hidden {
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  clip: rect(1px, 1px, 1px, 1px);
-  margin-left: -1px;
-}
-
-.hr {
-  width: 3.75rem;
-  height: 2px;
-  background: var(--tertiary);
-  margin-top: 3.75rem;
-  margin-bottom: 1.25rem;
-
-  &.hr--full {
-    width: 100%;
-    margin: 1.25rem 0 2.5rem;
   }
 }
 
